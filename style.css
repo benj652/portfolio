@@ -81,6 +81,10 @@ blockquote p {
   grid-column: 6 / 12;
 }
 
+#tech {
+    width: 75vw;
+}
+
 main > * + * {
   margin-top: var(--spacing);
 }

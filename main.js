@@ -48,7 +48,7 @@ pointLight.position.set(5, 5, 5);
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(pointLight, ambientLight);
 
-const controls = new OrbitControls(camera, renderer.domElement);
+// const controls = new OrbitControls(camera, renderer.domElement);
 
 function addBen(size) {
     const benTexture = new THREE.TextureLoader().load("ben.jpg");
@@ -76,7 +76,7 @@ const forestTexture = new THREE.TextureLoader().load("forest.png");
 // scene.background = forestTexture;
 
 const backgroundPlane = new THREE.Mesh(
-    new THREE.PlaneGeometry(250, 250),
+    new THREE.PlaneGeometry(300, 350),
     new THREE.MeshBasicMaterial({ map: forestTexture })
 );
 backgroundPlane.position.set(0, 0, -25);
@@ -93,10 +93,11 @@ function moveCamera() {
         ben.rotation.y += 0.01;
         ben.rotation.z += 0.01;
     });
-    // bigBenj.position.z = t * -0.01 - 20;
+    bigBenj.position.z = t * 0.0025;
+    // bigBenj.position.y += 1 + t * -0.0002;
 
     // Adjust background zoom based on scroll
-    const scale = THREE.MathUtils.clamp(1 + t * -0.00025, 0.1, 5);
+    const scale = THREE.MathUtils.clamp(1 - t * -0.00001, 0.1, 5);
     backgroundPlane.scale.set(scale, scale, 1);
 
     camera.fov = THREE.MathUtils.clamp(75 - t * 0.05, 20, 75); // Adjust field of view based on scroll
@@ -120,7 +121,7 @@ function animate() {
 
     bigBenj.rotation.y += 0.005;
 
-    controls.update();
+    // controls.update();
     renderer.render(scene, camera);
 }
 
