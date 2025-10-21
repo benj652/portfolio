@@ -170,3 +170,137 @@ body {
 .project-link a:hover {
     text-decoration: underline;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    :root {
+        --side-padding: 20px;
+        --spacing: 80px;
+        --text-gap: 1rem;
+    }
+
+    main {
+        padding: 60px var(--side-padding);
+        grid-template-columns: 1fr;
+        gap: var(--text-gap);
+    }
+
+    /* Make all sections span full width on mobile */
+    header,
+    section,
+    blockquote {
+        grid-column: 1;
+        margin-bottom: var(--spacing);
+    }
+
+    h1 {
+        font-size: 2rem;
+        height: auto;
+        padding: 15px;
+    }
+
+    header {
+        font-size: 1.8rem;
+        padding: 1.5rem;
+    }
+
+    section {
+        font-size: 1rem;
+        padding: 1.5rem;
+    }
+
+    blockquote p {
+        font-size: 1.8rem;
+        padding: 1rem;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .company-logo {
+        width: 50px;
+        height: 50px;
+        align-self: center;
+    }
+
+    #work-logo {
+        width: 120px;
+        height: 60px;
+        margin-top: 10px;
+    }
+
+    #tech {
+        width: 100%;
+    }
+
+    #projects {
+        padding: 1.5rem;
+        margin-left: 0;
+    }
+
+    #projects h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Improve touch targets */
+    a {
+        padding: 8px 4px;
+        display: inline-block;
+    }
+
+    /* Stack technology images vertically on very small screens */
+    section img {
+        max-width: 100%;
+        height: auto;
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --side-padding: 15px;
+        --spacing: 60px;
+    }
+
+    main {
+        padding: 40px var(--side-padding);
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+
+    header {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+
+    section {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+
+    blockquote p {
+        font-size: 1.5rem;
+    }
+
+    .experience-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .company {
+        font-size: 0.9rem;
+    }
+
+    .date {
+        font-size: 0.8rem;
+    }
+
+    #projects h2 {
+        font-size: 1.3rem;
+    }
+}

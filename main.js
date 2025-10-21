@@ -109,9 +109,16 @@ scene.add(backgroundPlane);
 
 function moveCamera() {
     const t = document.body.getBoundingClientRect().top;
-    camera.position.z = t * -0.01 + 30;
-    camera.position.x = t * -0.0002;
-    camera.position.y = t * -0.0002;
+    
+    // Check if we're on mobile for different zoom sensitivity
+    const isMobile = window.innerWidth <= 768;
+    const zoomFactor = isMobile ? -0.005 : -0.01;
+    const positionFactor = isMobile ? -0.0001 : -0.0002;
+    
+    // Zoom in when scrolling down, zoom out when scrolling up
+    camera.position.z = t * zoomFactor + 30;
+    camera.position.x = t * positionFactor;
+    camera.position.y = t * positionFactor;
 
     benjamins.forEach((ben) => {
         ben.rotation.x += 0.01;
