@@ -35,6 +35,31 @@ function bigBen(){
 
 const bigBenj = bigBen();
 
+function workBox(){
+    const boxTexture = new THREE.TextureLoader().load("work.png");
+    const material = new THREE.MeshBasicMaterial({ map: boxTexture });
+    const boxGeo = new THREE.BoxGeometry(15, 15, 15);
+    const workBox = new THREE.Mesh(boxGeo, material);
+    workBox.position.set(-35, 0, 30);
+    scene.add(workBox);
+    return workBox;
+}
+
+const theWorkBox = workBox();
+
+
+function projectBox(){
+    const boxTexture = new THREE.TextureLoader().load("projects.png");
+    const material = new THREE.MeshBasicMaterial({ map: boxTexture });
+    const boxGeo = new THREE.BoxGeometry(20, 20, 20);
+    const workBox = new THREE.Mesh(boxGeo, material);
+    workBox.position.set(35, -10, 30);
+    scene.add(workBox);
+    return workBox;
+}
+
+const theProjectBox= projectBox();
+
 // Torus
 // const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
 // const material = new THREE.MeshStandardMaterial({ color: 0xff6347 });
@@ -94,6 +119,8 @@ function moveCamera() {
         ben.rotation.z += 0.01;
     });
     bigBenj.position.z = t * 0.0025;
+    // theWorkBox.position.z = t * 0.0025;
+    // theProjectBox.position.z = t * 0.0001;
     // bigBenj.position.y += 1 + t * -0.0002;
 
     // Adjust background zoom based on scroll
