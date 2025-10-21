@@ -53,7 +53,7 @@ function projectBox(){
     const material = new THREE.MeshBasicMaterial({ map: boxTexture });
     const boxGeo = new THREE.BoxGeometry(20, 20, 20);
     const workBox = new THREE.Mesh(boxGeo, material);
-    workBox.position.set(35, -10, 30);
+    workBox.position.set(35, -10, 50);
     scene.add(workBox);
     return workBox;
 }
