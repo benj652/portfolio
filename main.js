@@ -24,7 +24,7 @@ renderer.render(scene, camera);
 
 // Big Ben
 function bigBen(){
-    const benTexture = new THREE.TextureLoader().load("/ben.jpg");
+    const benTexture = new THREE.TextureLoader().load("./ben.jpg");
     const material = new THREE.MeshBasicMaterial({ map: benTexture });
     const base = new THREE.IcosahedronGeometry(15, 0);
     const bigBen = new THREE.Mesh(base, material);
@@ -36,7 +36,7 @@ function bigBen(){
 const bigBenj = bigBen();
 
 function workBox(){
-    const boxTexture = new THREE.TextureLoader().load("/work.png");
+    const boxTexture = new THREE.TextureLoader().load("./work.png");
     const material = new THREE.MeshBasicMaterial({ map: boxTexture });
     const boxGeo = new THREE.BoxGeometry(15, 15, 15);
     const workBox = new THREE.Mesh(boxGeo, material);
@@ -49,7 +49,7 @@ const theWorkBox = workBox();
 
 
 function projectBox(){
-    const boxTexture = new THREE.TextureLoader().load("/projects.png");
+    const boxTexture = new THREE.TextureLoader().load("./projects.png");
     const material = new THREE.MeshBasicMaterial({ map: boxTexture });
     const boxGeo = new THREE.BoxGeometry(20, 20, 20);
     const workBox = new THREE.Mesh(boxGeo, material);
@@ -76,7 +76,7 @@ scene.add(pointLight, ambientLight);
 // const controls = new OrbitControls(camera, renderer.domElement);
 
 function addBen(size) {
-    const benTexture = new THREE.TextureLoader().load("/ben.jpg");
+    const benTexture = new THREE.TextureLoader().load("./ben.jpg");
     const geometry = new THREE.BoxGeometry(size, size, size);
     const material = new THREE.MeshBasicMaterial({ map: benTexture });
     const ben = new THREE.Mesh(geometry, material);
@@ -97,7 +97,7 @@ function addBen(size) {
 
 const benjamins = Array(15).fill().map(() => addBen(5));
 // Background
-const forestTexture = new THREE.TextureLoader().load("/forest.png");
+const forestTexture = new THREE.TextureLoader().load("./forest.png");
 // scene.background = forestTexture;
 
 const backgroundPlane = new THREE.Mesh(

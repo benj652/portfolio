@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/", // Use root base path for preview
+  base: "/portfolio/", // GitHub Pages expects the repository name in the path
   build: {
     assetsDir: "assets",
     rollupOptions: {
